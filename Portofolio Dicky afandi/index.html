@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portofolio Dicky Afandi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: #f8f8ff;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 60px;
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: #6a00ff;
+    }
+    nav .menu a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+    nav .connect-btn {
+      background: #b056ff;
+      padding: 10px 20px;
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .hero {
+      display: flex;
+      padding: 80px 60px;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hero-text h1 {
+      font-size: 60px;
+      font-weight: 700;
+      color: #222;
+    }
+    .hero-text span {
+      color: #b056ff;
+    }
+    .hero-text p {
+      max-width: 450px;
+      line-height: 1.6;
+    }
+    .download-btn {
+      background: #b056ff;
+      padding: 12px 25px;
+      border-radius: 10px;
+      display: inline-block;
+      margin-top: 20px;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .hero img {
+      width: 350px;
+      border-radius: 20px;
+    }
+    .work-section {
+      padding: 60px;
+    }
+    .work-section h2 {
+      font-size: 40px;
+    }
+    .work-section span {
+      color: #b056ff;
+    }
+    .history-cards {
+      display: flex;
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      width: 45%;
+    }
+    .card .year {
+      background: #b056ff;
+      color: white;
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-size: 14px;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+    .card h3 {
+      color: #333;
+    }
+  </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+</head>
+
+<body>
+  <nav>
+    <div class="logo">Portofolio</div>
+
+    <!-- Hamburger Button -->
+    <div class="hamburger" onclick="toggleMenu()" style="display:none; cursor:pointer;">
+      <span style="display:block; width:25px; height:3px; background:#6a00ff; margin:5px 0;"></span>
+      <span style="display:block; width:25px; height:3px; background:#6a00ff; margin:5px 0;"></span>
+      <span style="display:block; width:25px; height:3px; background:#6a00ff; margin:5px 0;"></span>
+    </div>
+
+    <div class="menu" id="menu">
+      <a href="#home">Home</a>
+      <a href="#about">About Me</a>
+      <a href="#resume">Resume</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="connect-btn" href="#contact">CONNECT</a>
+  </nav>
+
+  <script>
+    function toggleMenu(){
+      document.getElementById('menu').classList.toggle('show');
+    }
+  </script>
+
+  <style>
+    @media(max-width:768px){
+      nav{ padding:20px; }
+      .menu{ display:none; flex-direction:column; background:white; position:absolute; top:70px; right:20px; padding:20px; border-radius:10px; box-shadow:0 4px 20px rgba(0,0,0,0.1); }
+      .menu.show{ display:flex; }
+      .hamburger{ display:block !important; }
+      .connect-btn{ display:none; }
+      .hero{ flex-direction:column; text-align:center; }
+    }
+  </style>
+
+  <section class="hero" id="home">
+    <div class="hero-text">
+      <p>Hello 👋, I am</p>
+      <h1><span>Dicky Afandi</span></h1>
+      <p>Mahasiswa Teknik Informatika dengan fokus jaringan komputer dan pengembangan sistem IoT berbasis Arduino & ESP8266.</p>
+      <a href="DICKY-AFANDI-CV.pdf" class="download-btn">Download CV</a>
+    </div>
+    <div class="hero-img">
+      <img src="FOTO-DICKY.png" alt="Foto Dicky Afandi">
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="work-section" id="about">
+    <h2><i class="fa-solid fa-user" style="color:#b056ff; margin-right:10px;"></i> About <span>Me</span></h2>
+    <div class="card" style="width: 90%; margin: auto; line-height: 1.8;">
+      <p>
+        Fresh graduate Informatika dengan minat pada IT Support, troubleshooting hardware/software, dan jaringan dasar. 
+        Memiliki pengalaman kerja sebagai Assistant Store Manager, terbiasa menangani operasional store berbasis sistem digital, 
+        termasuk menangani gangguan POS, printer, WiFi, dan komputer. Mampu bekerja cepat, komunikatif, dan memiliki disiplin tinggi. 
+        Siap berkontribusi memberikan solusi teknis yang efektif di lingkungan kerja profesional.
+      </p>
+    </div>
+  </section>
+
+  <section class="work-section" id="resume">
+    <h2><i class="fa-solid fa-briefcase" style="color:#b056ff; margin-right:10px;"></i> Work <span>History</span></h2>
+    <p>Pengalaman dan perjalanan karir saya sejauh ini.</p>
+
+    <div class="history-cards">
+      <div class="card">
+        <div class="year">2023 - 2024</div>
+        <h3>IoT Developer</h3>
+        <p>Pengembangan sistem pendeteksi banjir menggunakan Arduino Uno R3 dan sensor ultrasonik berbasis Telegram.</p>
+      </div>
+
+      <div class="card">
+        <div class="year">2024 - 2025</div>
+        <h3>Network & System Technician</h3>
+        <p>Pengerjaan topologi jaringan, konfigurasi dasar router, troubleshooting jaringan, dan sistem komunikasi serial Arduino - ESP8266.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE SECTION -->
+  <section class="work-section" id="experience">
+    <h2><i class="fa-solid fa-clipboard-list" style="color:#b056ff; margin-right:10px;"></i> Professional <span>Experience</span></h2>
+    <div class="history-cards" style="flex-wrap: wrap;">
+
+      <div class="card" style="width: 45%;">
+        <div class="year">Jun 2016 - Jun 2021</div>
+        <h3>Pelatih Paskibra Kecamatan Pinang</h3>
+        <p>Melatih pasukan pengibar bendera merah putih di Kecamatan Pinang.</p>
+      </div>
+
+      <div class="card" style="width: 45%;">
+        <div class="year">Jun 2017 - Jun 2019</div>
+        <h3>Team Leader – PT. Aero Cipta Cargo</h3>
+        <p>Gudang pengiriman & penerimaan barang melalui udara dan darat di Bandara Soekarno-Hatta Terminal 1.</p>
+      </div>
+
+      <div class="card" style="width: 45%;">
+        <div class="year">Sep 2019 - Nov 2025</div>
+        <h3>Assistant Manager – PT. Foods Beverages Indonesia</h3>
+        <p>Bertanggung jawab dalam pengelolaan operasional dan supervisi tim.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EDUCATION SECTION -->
+  <section class="work-section" id="education">
+    <h2><i class="fa-solid fa-graduation-cap" style="color:#b056ff; margin-right:10px;"></i> Education <span>& Skills</span></h2>
+
+    <div class="card" style="width: 90%; margin: auto;">
+      <div class="year">Aug 2021 - Aug 2025</div>
+      <h3>Bachelor of Teknik Informatika</h3>
+      <p>Universitas Buddhi Dharma – IPK 3.14/4.00</p>
+      <ul>
+        <li>Proyek IoT: Sistem pendeteksi banjir berbasis Arduino Uno R3 & ESP8266.</li>
+        <li>Konfigurasi LAN, subnetting, routing dasar & troubleshooting jaringan.</li>
+        <li>Analisis koneksi dengan Wireshark & Packet Tracer.</li>
+        <li>Mengikuti webinar terkait networking & IoT.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- TECHNICAL SKILLS -->
+  <section class="work-section" id="skills-tech">
+    <h2><i class="fa-solid fa-microchip" style="color:#b056ff; margin-right:10px;"></i> Technical <span>Skills</span></h2>
+    <div class="card" style="width: 90%; margin: auto;">
+      <ul>
+        <li>Troubleshooting Hardware & Software (Windows OS)</li>
+        <li>Install Ulang OS, Driver Management, System Configuration</li>
+        <li>Basic Networking: IP Addressing, Subnetting, DHCP, DNS, Routing Fundamental</li>
+        <li>WiFi Setup (SSID, Password, Bandwidth Control)</li>
+        <li>Router Setup: TP-Link, Tenda, Mikrotik (Basic)</li>
+        <li>Mikrotik Basic Config: Firewall, NAT, DHCP, Hotspot</li>
+        <li>Network Monitoring: Ping, Traceroute, Latency Analysis</li>
+        <li>IoT Development: Arduino Uno, HC-SR04, NodeMCU ESP8266</li>
+        <li>Serial Communication Arduino ↔ ESP8266 (UART + Level Converter)</li>
+        <li>Microsoft Office: Excel, Word, PowerPoint</li>
+        <li>Tools: Arduino IDE, Packet Tracer, Wireshark</li>
+        <li>LAN Networking (Cabling, Crimping, Testing)</li>
+        <li>Hardware & Software Troubleshooting</li>
+        <li>IoT Sensor Integration & Basic Electronics</li>
+        <li>Basic Cybersecurity Knowledge</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="work-section" id="projects-iot">
+    <h2><i class="fa-solid fa-diagram-project" style="color:#b056ff; margin-right:10px;"></i> IT <span>Projects</span></h2>
+    <div class="card" style="width: 90%; margin: auto;">
+      <h3>Early Warning System – Flood Detection with Telegram Notification (2024)</h3>
+      <ul>
+        <li>Merancang dan membangun sistem pendeteksi dini banjir menggunakan Arduino Uno & HC-SR04.</li>
+        <li>Implementasi komunikasi serial Arduino ↔ ESP8266 menggunakan level converter.</li>
+        <li>Mengembangkan pengiriman notifikasi otomatis ke Telegram Bot API.</li>
+        <li>Algoritma jarak → status ketinggian → alert otomatis.</li>
+        <li>Penyusunan dokumentasi teknis dan pengujian.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS & ORGANIZATION -->
+  <section class="work-section" id="achievements">
+    <h2><i class="fa-solid fa-trophy" style="color:#b056ff; margin-right:10px;"></i> Achievements <span>& Organization</span></h2>
+    <div class="card" style="width: 90%; margin: auto;">
+      <ul>
+        <li>Paskibra 2018 – Pembentang Bendera Merah Putih Kecamatan Pinang.</li>
+        <li>Ketua OSIS SMKN 5 (2017) – Memimpin program sekolah & koordinasi kegiatan.</li>
+        <li>Wakil Ketua Duta Lingkungan Hidup (2017–2018).</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SOFT SKILLS -->
+  <section class="work-section" id="soft-skills">
+    <h2><i class="fa-solid fa-brain" style="color:#b056ff; margin-right:10px;"></i> Soft <span>Skills</span></h2>
+    <div class="card" style="width: 90%; margin: auto;">
+      <p>Leadership, Communication, Teamwork, Customer Handling, Problem Solving, Analytical Thinking, Adaptability, Time Management, Work Under Pressure, Responsibility & Discipline.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="work-section" id="contact">
+    <h2><i class="fa-solid fa-address-book" style="color:#b056ff; margin-right:10px;"></i> Contact <span>Me</span></h2>
+    <div class="card" style="width: 90%; margin: auto; line-height: 1.8;">
+      <p style="font-size:18px;"><i class="fa-solid fa-envelope" style="color:#b056ff; margin-right:8px;"></i> <strong>Email:</strong> dickyafandi86@gmail.com</p>
+      <p><i class="fa-brands fa-whatsapp" style="color:#25D366; margin-right:8px;"></i> <strong>Phone/WhatsApp:</strong> 0813-1946-7739</p>
+      <p><i class="fa-brands fa-linkedin" style="color:#0A66C2; margin-right:8px;"></i> <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/dicky-afandi-602373247" target="_blank">linkedin.com/in/dicky-afandi</a></p>
+      <p><i class="fa-solid fa-location-dot" style="color:#d9534f; margin-right:8px;"></i> <strong>Alamat:</strong> JL. Belimbing V No.11, Cibodasari, Cibodas, Kota Tangerang</p>
+
+      <br>
+      <h3>Kirim Pesan</h3>
+      <form onsubmit="sendMessage(event)" style="display: flex; flex-direction: column; gap: 15px;">
+        <input id="name" type="text" placeholder="Nama Anda" required style="padding: 12px; border-radius: 10px; border: 1px solid #ccc;">
+        <input id="email" type="email" placeholder="Email Anda" required style="padding: 12px; border-radius: 10px; border: 1px solid #ccc;">
+        <textarea id="message" placeholder="Pesan" rows="4" required style="padding: 12px; border-radius: 10px; border: 1px solid #ccc;"></textarea>
+        <button type="submit" style="padding: 12px; border-radius: 10px; background: #b056ff; color: white; font-weight: 600; border: none; cursor: pointer;">Kirim Pesan</button>
+      </form>
+
+      <script>
+        function sendMessage(event) {
+          event.preventDefault();
+          const name = document.getElementById('name').value;
+          const email = document.getElementById('email').value;
+          const message = document.getElementById('message').value;
+
+          // === KIRIM EMAIL (FormSubmit) ===
+          fetch("https://formsubmit.co/ajax/dickyafandi86@gmail.com", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              name: name,
+              email: email,
+              message: message
+            })
+          });
+
+          // === KIRIM WHATSAPP ===
+          const whatsappMessage = encodeURIComponent(`Halo, saya ${name}
+Email: ${email}
+Pesan: ${message}`);
+          window.open(`https://wa.me/6281319467739?text=${whatsappMessage}`);
+
+          showToast();
+        }
+      </script>
+    </div>
+  </section>
+
+  
+  <!-- PORTFOLIO SECTION -->
+  <section class="work-section" id="portfolio">
+    <h2><i class="fa-solid fa-folder-open" style="color:#b056ff; margin-right:10px;"></i> My <span>Portfolio</span></h2>
+    <div class="history-cards" style="flex-wrap: wrap;">
+      <div class="card" style="width:45%;">
+        <h3>Flood Detection IoT System</h3>
+        <p>Arduino Uno + HC‑SR04 + ESP8266 + Telegram Bot Notification.</p>
+      </div>
+      <div class="card" style="width:45%;">
+        <h3>Network Topology Setup</h3>
+        <p>LAN Setup, Routing Basic, Troubleshooting, Packet Tracer Simulation.</p>
+      </div>
+      <div class="card" style="width:45%;">
+        <h3>Serial Communication Project</h3>
+        <p>UART Arduino ↔ ESP8266 dengan level converter 4‑channel MH.</p>
+      </div>
+      <div class="card" style="width:45%;">
+        <h3>Small Automation Project</h3>
+        <p>Mini IoT Automation (ESP + Relay + Sensor).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:#111; color:white; text-align:center; padding:25px; margin-top:40px;">
+    <p>© 2025 Dicky Afandi — Portfolio Website</p>
+  </footer>
+
+  <!-- SIMPLE SCROLL ANIMATION -->
+  <script>
+    const sections = document.querySelectorAll('.work-section, .card');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){ entry.target.style.opacity = 1; entry.target.style.transform = 'translateY(0)'; }
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach(sec => {
+      sec.style.opacity = 0;
+      sec.style.transform = 'translateY(40px)';
+      sec.style.transition = '0.8s ease';
+      observer.observe(sec);
+    });
+  </script>
+
+  <!-- DARK MODE TOGGLE -->
+  <button onclick="toggleDark()" style="position:fixed; bottom:20px; right:20px; padding:12px 18px; border:none; border-radius:10px; background:#b056ff; color:white; font-weight:600; cursor:pointer;">Dark Mode</button>
+
+  <script>
+    function toggleDark(){
+      document.body.classList.toggle('dark');
+    }
+  </script>
+
+  <style>
+    .dark { background:#0f0f0f; color:white; }
+    .dark .card { background:#1f1f1f; color:white; }
+    .dark nav { background:#1f1f1f; }
+    .dark footer { background:#000; }
+  </style>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" style="position:fixed; bottom:30px; left:50%; transform:translateX(-50%); background:#4CAF50; color:white; padding:15px 25px; border-radius:10px; font-weight:600; opacity:0; transition:0.5s; z-index:9999;">Pesan berhasil dikirim!</div>
+
+  <script>
+    function showToast(){
+      const toast = document.getElementById('toast');
+      toast.style.opacity = 1;
+      setTimeout(()=>{ toast.style.opacity = 0; }, 3000);
+    }
+  </script>
+
+</body>
+</html>
