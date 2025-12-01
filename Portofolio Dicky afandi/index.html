@@ -4,416 +4,469 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portofolio Dicky Afandi</title>
+
+  <!-- FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- ICON -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
   <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
     body {
       font-family: 'Poppins', sans-serif;
-      margin: 0;
       background: #f8f8ff;
+      transition: 0.3s;
     }
+
+    /* NAVBAR */
     nav {
       display: flex;
       justify-content: space-between;
-      padding: 20px 60px;
+      align-items: center;
+      padding: 18px 50px;
       background: white;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 999;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
     }
+
     nav .logo {
       font-size: 24px;
       font-weight: 700;
       color: #6a00ff;
     }
-    nav .menu a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-    }
-    nav .connect-btn {
-      background: #b056ff;
-      padding: 10px 20px;
-      color: white;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .hero {
+
+    nav .menu {
       display: flex;
-      padding: 80px 60px;
-      justify-content: space-between;
+      gap: 25px;
       align-items: center;
     }
+
+    nav .menu a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #333;
+      transition: 0.2s;
+    }
+
+    nav .menu a:hover { color: #6a00ff; }
+
+    /* HAMBURGER */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .hamburger span {
+      width: 28px;
+      height: 3px;
+      background: #6a00ff;
+      border-radius: 4px;
+    }
+
+    /* DARK MODE ICON */
+    #themeBtn {
+      font-size: 22px;
+      color: #6a00ff;
+      cursor: pointer;
+      margin-left: 18px;
+    }
+
+    /* MOBILE NAV FIX */
+    @media(max-width: 900px){
+
+      /* Hilangkan menu total di HP */
+      nav .menu {
+        display: none !important;
+        position: absolute;
+        top: 70px;
+        right: 25px;
+        background: white;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        flex-direction: column;
+        gap: 18px;
+        width: 180px;
+        z-index: 9999;
+      }
+
+      /* Tampilkan saat diklik */
+      nav .menu.show {
+        display: flex !important;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    /* HERO */
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      padding: 80px 60px;
+      align-items: center;
+      gap: 40px;
+    }
+
     .hero-text h1 {
       font-size: 60px;
       font-weight: 700;
       color: #222;
     }
-    .hero-text span {
-      color: #b056ff;
-    }
-    .hero-text p {
-      max-width: 450px;
-      line-height: 1.6;
-    }
+
+    .hero-text span { color: #b056ff; }
+
     .download-btn {
       background: #b056ff;
-      padding: 12px 25px;
-      border-radius: 10px;
-      display: inline-block;
-      margin-top: 20px;
+      padding: 10px 20px;
       color: white;
+      border-radius: 10px;
+      margin-top: 20px;
+      display: inline-block;
       text-decoration: none;
       font-weight: 600;
     }
+
     .hero img {
-      width: 350px;
+      width: 340px;
       border-radius: 20px;
     }
+
+    @media(max-width: 900px){
+      .hero {
+        flex-direction: column;
+        padding: 50px 25px;
+        text-align: center;
+      }
+
+      .hero-text h1 { font-size: 40px; }
+    }
+
+    /* SECTION */
     .work-section {
       padding: 60px;
     }
+
     .work-section h2 {
-      font-size: 40px;
+      font-size: 38px;
+      margin-bottom: 15px;
     }
-    .work-section span {
-      color: #b056ff;
-    }
-    .history-cards {
-      display: flex;
-      gap: 30px;
-      margin-top: 40px;
-    }
+
     .card {
       background: white;
-      padding: 30px;
+      padding: 28px;
       border-radius: 20px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      width: 45%;
+      margin-top: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
     }
-    .card .year {
-      background: #b056ff;
-      color: white;
-      padding: 6px 14px;
-      border-radius: 30px;
-      font-size: 14px;
-      display: inline-block;
-      margin-bottom: 10px;
-    }
-    .card h3 {
-      color: #333;
-    }
-  </style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
+    .history-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+    }
+
+    .history-cards .card { width: 47%; }
+
+    @media(max-width: 900px){
+      .history-cards .card { width: 100%; }
+    }
+
+    .year {
+      background: #b056ff;
+      display: inline-block;
+      padding: 6px 14px;
+      color: white;
+      border-radius: 25px;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    /* DARK MODE */
+    body.dark { background:#0f0f0f; color:white; }
+    body.dark nav { background:#1a1a1a; box-shadow:none; }
+    body.dark .card { background:#1e1e1e; color:white; }
+    body.dark .menu { background:#1e1e1e; }
+    body.dark footer { background:#050505; color:white; }
+  </style>
 </head>
 
 <body>
-  <nav>
-    <div class="logo">Portofolio</div>
 
-    <!-- Hamburger Button -->
-    <div class="hamburger" onclick="toggleMenu()" style="display:none; cursor:pointer;">
-      <span style="display:block; width:25px; height:3px; background:#6a00ff; margin:5px 0;"></span>
-      <span style="display:block; width:25px; height:3px; background:#6a00ff; margin:5px 0;"></span>
-      <span style="display:block; width:25px; height:3px; background:#6a00ff; margin:5px 0;"></span>
+<!-- NAV -->
+<nav>
+  <div class="logo">Portofolio</div>
+
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+
+  <div class="menu" id="menu">
+    <a onclick="closeMenu()" href="#home">Home</a>
+    <a onclick="closeMenu()" href="#about">About</a>
+    <a onclick="closeMenu()" href="#resume">Resume</a>
+    <a onclick="closeMenu()" href="#portfolio">Portfolio</a>
+    <a onclick="closeMenu()" href="#tools">Tools</a>
+    <a onclick="closeMenu()" href="#contact">Contact</a>
+  </div>
+
+  <i id="themeBtn" class="fa-solid fa-moon"></i>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-text">
+    <p>Hello 👋, I am</p>
+    <h1><span>Dicky Afandi</span></h1>
+    <p>Mahasiswa Teknik Informatika fokus jaringan & IoT Arduino + ESP8266.</p>
+    <a href="DICKY-AFANDI-CV.pdf" class="download-btn">Download CV</a>
+  </div>
+
+  <div class="hero-img">
+    <img src="FOTO-DICKY.png" alt="Foto Dicky">
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="work-section" id="about">
+  <h2><i class="fa-solid fa-user" style="color:#b056ff"></i> About <span>Me</span></h2>
+  <div class="card">
+    <p>Fresh graduate Informatika dengan minat pada IT Support, troubleshooting hardware/software, dan jaringan 
+dasar. Memiliki pengalaman kerja sebagai Assistant Store Manager, terbiasa menangani operasional store 
+berbasis sistem digital, termasuk menangani gangguan POS, printer, WiFi, dan komputer. Mampu bekerja cepat, 
+komunikatif, dan memiliki disiplin tinggi. Siap berkontribusi memberikan solusi teknis yang efektif di lingkungan 
+kerja profesional.</p>
+  </div>
+</section>
+<!-- RESUME -->
+<section class="work-section" id="resume">
+  <h2><i class="fa-solid fa-briefcase" style="color:#b056ff"></i> Resume <span>Snapshot</span></h2>
+
+  <div class="history-cards">
+    <div class="card">
+      <div class="year">2023 - 2024</div>
+      <h3>IoT Developer</h3>
+      <p>Membuat sistem deteksi banjir Arduino Uno + HC-SR04 + ESP8266 + Telegram Bot.</p>
     </div>
 
-    <div class="menu" id="menu">
-      <a href="#home">Home</a>
-      <a href="#about">About Me</a>
-      <a href="#resume">Resume</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#contact">Contact</a>
+    <div class="card">
+      <div class="year">2024 - 2025</div>
+      <h3>Network & System Technician</h3>
+      <p>Konfigurasi LAN, routing dasar, troubleshooting jaringan, komunikasi Arduino–ESP8266.</p>
     </div>
-    <a class="connect-btn" href="#contact">CONNECT</a>
-  </nav>
+  </div>
+</section>
 
-  <script>
-    function toggleMenu(){
-      document.getElementById('menu').classList.toggle('show');
-    }
-  </script>
+<!-- EXPERIENCE -->
+<section class="work-section" id="experience">
+  <h2><i class="fa-solid fa-clipboard-list" style="color:#b056ff"></i> Professional <span>Experience</span></h2>
+
+  <div class="history-cards">
+    <div class="card">
+      <div class="year">2016 - 2021</div>
+      <h3>Pelatih Paskibra Kec. Pinang</h3>
+      <p>Melatih pasukan pengibar bendera tingkat kecamatan.</p>
+    </div>
+
+    <div class="card">
+      <div class="year">2017 - 2019</div>
+      <h3>Team Leader – Aero Cipta Cargo</h3>
+      <p>Gudang pengiriman Barang dan penerimaan barang melalui udara dan darat..</p>
+    </div>
+
+    <div class="card">
+      <div class="year">2019 - 2025</div>
+      <h3>Assistant Manager – F&B Indonesia</h3>
+      <p>Supervisor operasional, troubleshooting sistem POS, printer, WiFi.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="work-section" id="education">
+  <h2><i class="fa-solid fa-graduation-cap" style="color:#b056ff"></i> Education <span>& Skills</span></h2>
+
+  <div class="card">
+    <div class="year">2021 - 2025</div>
+    <h3>Teknik Informatika — Universitas Buddhi Dharma</h3>
+    <p>IPK 3.14 — Fokus Jaringan & IoT</p>
+    <ul style="line-height:1.7;">
+      <li>Proyek banjir Arduino + ESP8266</li>
+      <li>LAN, subnetting, routing dasar</li>
+      <li>Wireshark & Packet Tracer</li>
+    </ul>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section class="work-section" id="tools">
+  <h2><i class="fa-solid fa-toolbox" style="color:#b056ff"></i> Tools <span>I Use</span></h2>
 
   <style>
-    @media(max-width:768px){
-      nav{ padding:20px; }
-      .menu{ display:none; flex-direction:column; background:white; position:absolute; top:70px; right:20px; padding:20px; border-radius:10px; box-shadow:0 4px 20px rgba(0,0,0,0.1); }
-      .menu.show{ display:flex; }
-      .hamburger{ display:block !important; }
-      .connect-btn{ display:none; }
-      .hero{ flex-direction:column; text-align:center; }
+    .tools-grid {
+      margin-top: 25px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 22px;
+    }
+    .tool-item {
+      text-align:center;
+      transition:0.3s;
+    }
+    .tool-item:hover {
+      transform: translateY(-6px);
+    }
+    .tool-item img {
+      width:45px;
+      height:45px;
     }
   </style>
 
-  <section class="hero" id="home">
-    <div class="hero-text">
-      <p>Hello 👋, I am</p>
-      <h1><span>Dicky Afandi</span></h1>
-      <p>Mahasiswa Teknik Informatika dengan fokus jaringan komputer dan pengembangan sistem IoT berbasis Arduino & ESP8266.</p>
-      <a href="DICKY-AFANDI-CV.pdf" class="download-btn">Download CV</a>
+  <div class="tools-grid">
+    <div class="tool-item"><i class="fa-brands fa-html5" style="font-size:45px;color:#E44D26"></i><p>HTML</p></div>
+    <div class="tool-item"><i class="fa-brands fa-css3-alt" style="font-size:45px;color:#1572B6"></i><p>CSS</p></div>
+    <div class="tool-item"><i class="fa-brands fa-js" style="font-size:45px;color:#F7DF1E"></i><p>JavaScript</p></div>
+    <div class="tool-item"><i class="fa-solid fa-microchip" style="font-size:45px;color:#00979D"></i><p>Arduino</p></div>
+    <div class="tool-item"><i class="fa-solid fa-wifi" style="font-size:45px;color:#00A8E8"></i><p>Wireshark</p></div>
+    <div class="tool-item"><i class="fa-solid fa-network-wired" style="font-size:45px;color:#0066CC"></i><p>Packet Tracer</p></div>
+    <div class="tool-item"><i class="fa-solid fa-code" style="font-size:45px;color:#22A6F0"></i><p>VS Code</p></div>
+    <div class="tool-item"><i class="fa-solid fa-server" style="font-size:45px;color:#e91e63"></i><p>Mikrotik</p></div>
+    <div class="tool-item"><i class="fa-brands fa-github" style="font-size:45px;"></i><p>GitHub</p></div>
+    <div class="tool-item">
+      <img src="https://cdn.worldvectorlogo.com/logos/netlify.svg">
+      <p>Netlify</p>
     </div>
-    <div class="hero-img">
-      <img src="FOTO-DICKY.png" alt="Foto Dicky Afandi">
-    </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ABOUT SECTION -->
-  <section class="work-section" id="about">
-    <h2><i class="fa-solid fa-user" style="color:#b056ff; margin-right:10px;"></i> About <span>Me</span></h2>
-    <div class="card" style="width: 90%; margin: auto; line-height: 1.8;">
-      <p>
-        Fresh graduate Informatika dengan minat pada IT Support, troubleshooting hardware/software, dan jaringan dasar. 
-        Memiliki pengalaman kerja sebagai Assistant Store Manager, terbiasa menangani operasional store berbasis sistem digital, 
-        termasuk menangani gangguan POS, printer, WiFi, dan komputer. Mampu bekerja cepat, komunikatif, dan memiliki disiplin tinggi. 
-        Siap berkontribusi memberikan solusi teknis yang efektif di lingkungan kerja profesional.
-      </p>
-    </div>
-  </section>
+<!-- PORTFOLIO -->
+<section class="work-section" id="portfolio">
+  <h2><i class="fa-solid fa-folder-open" style="color:#b056ff"></i> Portfolio <span>Highlights</span></h2>
 
-  <section class="work-section" id="resume">
-    <h2><i class="fa-solid fa-briefcase" style="color:#b056ff; margin-right:10px;"></i> Work <span>History</span></h2>
-    <p>Pengalaman dan perjalanan karir saya sejauh ini.</p>
+  <div class="history-cards">
+    <div class="card"><h3>Flood Detection IoT</h3><p>Arduino + HC-SR04 + ESP8266 + Telegram Bot.</p></div>
+    <div class="card"><h3>LAN & Routing</h3><p>Subnetting, DHCP, DNS, troubleshooting jaringan.</p></div>
+    <div class="card"><h3>Serial UART Project</h3><p>Arduino ↔ ESP8266 level converter.</p></div>
+    <div class="card"><h3>Mini Automation</h3><p>ESP + Relay + Sensor.</p></div>
+  </div>
+</section>
 
-    <div class="history-cards">
-      <div class="card">
-        <div class="year">2023 - 2024</div>
-        <h3>IoT Developer</h3>
-        <p>Pengembangan sistem pendeteksi banjir menggunakan Arduino Uno R3 dan sensor ultrasonik berbasis Telegram.</p>
-      </div>
+<!-- CONTACT -->
+<section class="work-section" id="contact">
+  <h2><i class="fa-solid fa-address-book" style="color:#b056ff"></i> Contact <span>Me</span></h2>
 
-      <div class="card">
-        <div class="year">2024 - 2025</div>
-        <h3>Network & System Technician</h3>
-        <p>Pengerjaan topologi jaringan, konfigurasi dasar router, troubleshooting jaringan, dan sistem komunikasi serial Arduino - ESP8266.</p>
-      </div>
-    </div>
-  </section>
+  <div class="card">
+    <p><i class="fa-solid fa-envelope" style="color:#b056ff"></i> dickyafandi86@gmail.com</p>
+    <p><i class="fa-brands fa-whatsapp" style="color:#25D366"></i> 0813-1946-7739</p>
+    <p><i class="fa-brands fa-linkedin" style="color:#0A66C2"></i> linkedin.com/in/dicky-afandi</p>
+    <p><i class="fa-solid fa-location-dot" style="color:#d9534f"></i> Tangerang, Indonesia</p>
 
-  <!-- EXPERIENCE SECTION -->
-  <section class="work-section" id="experience">
-    <h2><i class="fa-solid fa-clipboard-list" style="color:#b056ff; margin-right:10px;"></i> Professional <span>Experience</span></h2>
-    <div class="history-cards" style="flex-wrap: wrap;">
+    <h3 style="margin-top:25px;">Kirim Pesan</h3>
 
-      <div class="card" style="width: 45%;">
-        <div class="year">Jun 2016 - Jun 2021</div>
-        <h3>Pelatih Paskibra Kecamatan Pinang</h3>
-        <p>Melatih pasukan pengibar bendera merah putih di Kecamatan Pinang.</p>
-      </div>
+    <form onsubmit="sendMessage(event)" style="display:flex;flex-direction:column;gap:12px;max-width:500px;">
+      <input id="name" placeholder="Nama" required style="padding:12px;border-radius:8px;border:1px solid #ccc;">
+      <input id="email" type="email" placeholder="Email" required style="padding:12px;border-radius:8px;border:1px solid #ccc;">
+      <textarea id="message" rows="4" placeholder="Pesan" required style="padding:12px;border-radius:8px;border:1px solid #ccc;"></textarea>
+      <button style="padding:12px;border:none;border-radius:10px;background:#b056ff;color:white;font-weight:600;">Kirim Pesan</button>
+    </form>
+  </div>
+</section>
 
-      <div class="card" style="width: 45%;">
-        <div class="year">Jun 2017 - Jun 2019</div>
-        <h3>Team Leader – PT. Aero Cipta Cargo</h3>
-        <p>Gudang pengiriman & penerimaan barang melalui udara dan darat di Bandara Soekarno-Hatta Terminal 1.</p>
-      </div>
+<!-- FOOTER FIX -->
+<footer style="background:#111; color:white; text-align:center; padding:20px; width:100%; margin-top:40px;">
+  © 2025 Dicky Afandi — Portfolio Website
+</footer>
 
-      <div class="card" style="width: 45%;">
-        <div class="year">Sep 2019 - Nov 2025</div>
-        <h3>Assistant Manager – PT. Foods Beverages Indonesia</h3>
-        <p>Bertanggung jawab dalam pengelolaan operasional dan supervisi tim.</p>
-      </div>
+<!-- TOAST -->
+<div id="toast" style="
+  position:fixed; bottom:30px; left:50%; transform:translateX(-50%);
+  background:#4CAF50; color:white; padding:14px 22px; border-radius:10px;
+  opacity:0; font-weight:600; transition:0.4s; z-index:9999;">
+  Pesan berhasil dikirim!
+</div>
 
-    </div>
-  </section>
+<!-- SCRIPTS -->
+<script>
+  // ===== MENU NAV =====
+  function toggleMenu(){ document.getElementById('menu').classList.toggle('show'); }
+  function closeMenu(){ document.getElementById('menu').classList.remove('show'); }
 
-  <!-- EDUCATION SECTION -->
-  <section class="work-section" id="education">
-    <h2><i class="fa-solid fa-graduation-cap" style="color:#b056ff; margin-right:10px;"></i> Education <span>& Skills</span></h2>
+  // ===== DARK MODE =====
+  const themeBtn = document.getElementById("themeBtn");
+  function setTheme(mode){
+    if(mode==="dark"){
+      document.body.classList.add("dark");
+      themeBtn.classList.replace("fa-moon","fa-sun");
+    } else {
+      document.body.classList.remove("dark");
+      themeBtn.classList.replace("fa-sun","fa-moon");
+    }
+    localStorage.setItem("theme",mode);
+  }
 
-    <div class="card" style="width: 90%; margin: auto;">
-      <div class="year">Aug 2021 - Aug 2025</div>
-      <h3>Bachelor of Teknik Informatika</h3>
-      <p>Universitas Buddhi Dharma – IPK 3.14/4.00</p>
-      <ul>
-        <li>Proyek IoT: Sistem pendeteksi banjir berbasis Arduino Uno R3 & ESP8266.</li>
-        <li>Konfigurasi LAN, subnetting, routing dasar & troubleshooting jaringan.</li>
-        <li>Analisis koneksi dengan Wireshark & Packet Tracer.</li>
-        <li>Mengikuti webinar terkait networking & IoT.</li>
-      </ul>
-    </div>
-  </section>
+  themeBtn.onclick = () => {
+    const dark = document.body.classList.contains("dark");
+    setTheme(dark ? "light":"dark");
+  };
 
-  <!-- TECHNICAL SKILLS -->
-  <section class="work-section" id="skills-tech">
-    <h2><i class="fa-solid fa-microchip" style="color:#b056ff; margin-right:10px;"></i> Technical <span>Skills</span></h2>
-    <div class="card" style="width: 90%; margin: auto;">
-      <ul>
-        <li>Troubleshooting Hardware & Software (Windows OS)</li>
-        <li>Install Ulang OS, Driver Management, System Configuration</li>
-        <li>Basic Networking: IP Addressing, Subnetting, DHCP, DNS, Routing Fundamental</li>
-        <li>WiFi Setup (SSID, Password, Bandwidth Control)</li>
-        <li>Router Setup: TP-Link, Tenda, Mikrotik (Basic)</li>
-        <li>Mikrotik Basic Config: Firewall, NAT, DHCP, Hotspot</li>
-        <li>Network Monitoring: Ping, Traceroute, Latency Analysis</li>
-        <li>IoT Development: Arduino Uno, HC-SR04, NodeMCU ESP8266</li>
-        <li>Serial Communication Arduino ↔ ESP8266 (UART + Level Converter)</li>
-        <li>Microsoft Office: Excel, Word, PowerPoint</li>
-        <li>Tools: Arduino IDE, Packet Tracer, Wireshark</li>
-        <li>LAN Networking (Cabling, Crimping, Testing)</li>
-        <li>Hardware & Software Troubleshooting</li>
-        <li>IoT Sensor Integration & Basic Electronics</li>
-        <li>Basic Cybersecurity Knowledge</li>
-      </ul>
-    </div>
-  </section>
+  document.addEventListener("DOMContentLoaded",()=>{
+    setTheme(localStorage.getItem("theme") || "light");
+  });
 
-  <!-- PROJECTS -->
-  <section class="work-section" id="projects-iot">
-    <h2><i class="fa-solid fa-diagram-project" style="color:#b056ff; margin-right:10px;"></i> IT <span>Projects</span></h2>
-    <div class="card" style="width: 90%; margin: auto;">
-      <h3>Early Warning System – Flood Detection with Telegram Notification (2024)</h3>
-      <ul>
-        <li>Merancang dan membangun sistem pendeteksi dini banjir menggunakan Arduino Uno & HC-SR04.</li>
-        <li>Implementasi komunikasi serial Arduino ↔ ESP8266 menggunakan level converter.</li>
-        <li>Mengembangkan pengiriman notifikasi otomatis ke Telegram Bot API.</li>
-        <li>Algoritma jarak → status ketinggian → alert otomatis.</li>
-        <li>Penyusunan dokumentasi teknis dan pengujian.</li>
-      </ul>
-    </div>
-  </section>
+  // ===== SEND MESSAGE =====
+  function sendMessage(e){
+    e.preventDefault();
 
-  <!-- ACHIEVEMENTS & ORGANIZATION -->
-  <section class="work-section" id="achievements">
-    <h2><i class="fa-solid fa-trophy" style="color:#b056ff; margin-right:10px;"></i> Achievements <span>& Organization</span></h2>
-    <div class="card" style="width: 90%; margin: auto;">
-      <ul>
-        <li>Paskibra 2018 – Pembentang Bendera Merah Putih Kecamatan Pinang.</li>
-        <li>Ketua OSIS SMKN 5 (2017) – Memimpin program sekolah & koordinasi kegiatan.</li>
-        <li>Wakil Ketua Duta Lingkungan Hidup (2017–2018).</li>
-      </ul>
-    </div>
-  </section>
+    let n = name.value.trim();
+    let eMail = email.value.trim();
+    let m = message.value.trim();
 
-  <!-- SOFT SKILLS -->
-  <section class="work-section" id="soft-skills">
-    <h2><i class="fa-solid fa-brain" style="color:#b056ff; margin-right:10px;"></i> Soft <span>Skills</span></h2>
-    <div class="card" style="width: 90%; margin: auto;">
-      <p>Leadership, Communication, Teamwork, Customer Handling, Problem Solving, Analytical Thinking, Adaptability, Time Management, Work Under Pressure, Responsibility & Discipline.</p>
-    </div>
-  </section>
-
-  <!-- CONTACT SECTION -->
-  <section class="work-section" id="contact">
-    <h2><i class="fa-solid fa-address-book" style="color:#b056ff; margin-right:10px;"></i> Contact <span>Me</span></h2>
-    <div class="card" style="width: 90%; margin: auto; line-height: 1.8;">
-      <p style="font-size:18px;"><i class="fa-solid fa-envelope" style="color:#b056ff; margin-right:8px;"></i> <strong>Email:</strong> dickyafandi86@gmail.com</p>
-      <p><i class="fa-brands fa-whatsapp" style="color:#25D366; margin-right:8px;"></i> <strong>Phone/WhatsApp:</strong> 0813-1946-7739</p>
-      <p><i class="fa-brands fa-linkedin" style="color:#0A66C2; margin-right:8px;"></i> <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/dicky-afandi-602373247" target="_blank">linkedin.com/in/dicky-afandi</a></p>
-      <p><i class="fa-solid fa-location-dot" style="color:#d9534f; margin-right:8px;"></i> <strong>Alamat:</strong> JL. Belimbing V No.11, Cibodasari, Cibodas, Kota Tangerang</p>
-
-      <br>
-      <h3>Kirim Pesan</h3>
-      <form onsubmit="sendMessage(event)" style="display: flex; flex-direction: column; gap: 15px;">
-        <input id="name" type="text" placeholder="Nama Anda" required style="padding: 12px; border-radius: 10px; border: 1px solid #ccc;">
-        <input id="email" type="email" placeholder="Email Anda" required style="padding: 12px; border-radius: 10px; border: 1px solid #ccc;">
-        <textarea id="message" placeholder="Pesan" rows="4" required style="padding: 12px; border-radius: 10px; border: 1px solid #ccc;"></textarea>
-        <button type="submit" style="padding: 12px; border-radius: 10px; background: #b056ff; color: white; font-weight: 600; border: none; cursor: pointer;">Kirim Pesan</button>
-      </form>
-
-      <script>
-        function sendMessage(event) {
-          event.preventDefault();
-          const name = document.getElementById('name').value;
-          const email = document.getElementById('email').value;
-          const message = document.getElementById('message').value;
-
-          // === KIRIM EMAIL (FormSubmit) ===
-          fetch("https://formsubmit.co/ajax/dickyafandi86@gmail.com", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              name: name,
-              email: email,
-              message: message
-            })
-          });
-
-          // === KIRIM WHATSAPP ===
-          const whatsappMessage = encodeURIComponent(`Halo, saya ${name}
-Email: ${email}
-Pesan: ${message}`);
-          window.open(`https://wa.me/6281319467739?text=${whatsappMessage}`);
-
-          showToast();
-        }
-      </script>
-    </div>
-  </section>
-
-  
-  <!-- PORTFOLIO SECTION -->
-  <section class="work-section" id="portfolio">
-    <h2><i class="fa-solid fa-folder-open" style="color:#b056ff; margin-right:10px;"></i> My <span>Portfolio</span></h2>
-    <div class="history-cards" style="flex-wrap: wrap;">
-      <div class="card" style="width:45%;">
-        <h3>Flood Detection IoT System</h3>
-        <p>Arduino Uno + HC‑SR04 + ESP8266 + Telegram Bot Notification.</p>
-      </div>
-      <div class="card" style="width:45%;">
-        <h3>Network Topology Setup</h3>
-        <p>LAN Setup, Routing Basic, Troubleshooting, Packet Tracer Simulation.</p>
-      </div>
-      <div class="card" style="width:45%;">
-        <h3>Serial Communication Project</h3>
-        <p>UART Arduino ↔ ESP8266 dengan level converter 4‑channel MH.</p>
-      </div>
-      <div class="card" style="width:45%;">
-        <h3>Small Automation Project</h3>
-        <p>Mini IoT Automation (ESP + Relay + Sensor).</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer style="background:#111; color:white; text-align:center; padding:25px; margin-top:40px;">
-    <p>© 2025 Dicky Afandi — Portfolio Website</p>
-  </footer>
-
-  <!-- SIMPLE SCROLL ANIMATION -->
-  <script>
-    const sections = document.querySelectorAll('.work-section, .card');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){ entry.target.style.opacity = 1; entry.target.style.transform = 'translateY(0)'; }
-      });
-    }, { threshold: 0.1 });
-
-    sections.forEach(sec => {
-      sec.style.opacity = 0;
-      sec.style.transform = 'translateY(40px)';
-      sec.style.transition = '0.8s ease';
-      observer.observe(sec);
+    // EMAIL → FormSubmit
+    fetch("https://formsubmit.co/ajax/dickyafandi86@gmail.com", {
+      method:"POST",
+      headers:{ "Content-Type":"application/json" },
+      body:JSON.stringify({name:n,email:eMail,message:m})
     });
-  </script>
 
-  <!-- DARK MODE TOGGLE -->
-  <button onclick="toggleDark()" style="position:fixed; bottom:20px; right:20px; padding:12px 18px; border:none; border-radius:10px; background:#b056ff; color:white; font-weight:600; cursor:pointer;">Dark Mode</button>
+    // WHATSAPP
+    let wa = encodeURIComponent(`Halo, saya ${n}\nEmail: ${eMail}\nPesan: ${m}`);
+    window.open(`https://wa.me/6281319467739?text=${wa}`,"_blank");
 
-  <script>
-    function toggleDark(){
-      document.body.classList.toggle('dark');
-    }
-  </script>
+    showToast();
+  }
 
-  <style>
-    .dark { background:#0f0f0f; color:white; }
-    .dark .card { background:#1f1f1f; color:white; }
-    .dark nav { background:#1f1f1f; }
-    .dark footer { background:#000; }
-  </style>
+  // ===== TOAST =====
+  function showToast(){
+    let t = document.getElementById("toast");
+    t.style.opacity = 1;
+    setTimeout(()=>{ t.style.opacity = 0; },2500);
+  }
 
-  <!-- TOAST NOTIFICATION -->
-  <div id="toast" style="position:fixed; bottom:30px; left:50%; transform:translateX(-50%); background:#4CAF50; color:white; padding:15px 25px; border-radius:10px; font-weight:600; opacity:0; transition:0.5s; z-index:9999;">Pesan berhasil dikirim!</div>
+  // ===== SCROLL ANIMATION =====
+  const obs = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.style.opacity = 1;
+        e.target.style.transform = "translateY(0)";
+      }
+    });
+  },{threshold:0.15});
 
-  <script>
-    function showToast(){
-      const toast = document.getElementById('toast');
-      toast.style.opacity = 1;
-      setTimeout(()=>{ toast.style.opacity = 0; }, 3000);
-    }
-  </script>
+  document.querySelectorAll(".work-section, .card").forEach(sec=>{
+    sec.style.opacity = 0;
+    sec.style.transform = "translateY(35px)";
+    sec.style.transition = "0.7s ease";
+    obs.observe(sec);
+  });
+</script>
 
 </body>
 </html>
